@@ -1,5 +1,5 @@
 """
-dashboard.py — Guardrail Full Research Dashboard
+dashboard.py — neurawall Full Research Dashboard
 Shows: live requests, benchmark results, CSIC results, PQC table, ModSecurity comparison
 """
 from collections import deque, defaultdict
@@ -68,7 +68,7 @@ def add_dashboard(app: FastAPI):
             except Exception:
                 pass
 
-    logging.getLogger("guardrail").addHandler(DashboardHandler())
+    logging.getLogger("neurawall").addHandler(DashboardHandler())
 
 
 DASHBOARD_HTML = """<!DOCTYPE html>
@@ -76,7 +76,7 @@ DASHBOARD_HTML = """<!DOCTYPE html>
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Guardrail — Research Dashboard</title>
+<title>neurawall — Research Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow:wght@300;500;700;800&display=swap" rel="stylesheet"/>
 <style>
 :root {
@@ -175,7 +175,7 @@ td{padding:10px 16px;vertical-align:middle;}
     <div class="logo">
       <div class="logo-icon">🛡</div>
       <div>
-        <div class="logo-title">Guardrail</div>
+        <div class="logo-title">neurawall</div>
         <div class="logo-sub">AI Security Research Dashboard</div>
       </div>
     </div>
@@ -271,7 +271,7 @@ td{padding:10px 16px;vertical-align:middle;}
       <div style="padding:20px;font-size:13px;line-height:1.8;color:var(--text)">
         Evaluated against the <strong style="color:var(--accent)">CSIC 2010 HTTP Dataset</strong>, a standard benchmark used in 200+ published intrusion detection papers.
         Testing 1,000 sampled requests (500 confirmed attack payloads, 500 normal traffic),
-        Guardrail achieved <strong style="color:var(--accent)" id="c-sum-det">100%</strong> detection with
+        neurawall achieved <strong style="color:var(--accent)" id="c-sum-det">100%</strong> detection with
         <strong style="color:var(--accent)" id="c-sum-fp">0%</strong> false positives and
         <strong style="color:var(--warn)" id="c-sum-lat">181ms</strong> average response latency.
       </div>
@@ -299,7 +299,7 @@ td{padding:10px 16px;vertical-align:middle;}
   <div id="tab-comparison" class="tab-content">
     <div class="res-grid">
       <div class="card">
-        <div class="card-header"><div class="card-title">Guardrail</div><div class="badge" style="color:var(--accent)">AI-Powered</div></div>
+        <div class="card-header"><div class="card-title">neurawall</div><div class="badge" style="color:var(--accent)">AI-Powered</div></div>
         <div style="padding:16px">
           <div class="metric-row"><span class="metric-label">Detection Rate</span><span class="metric-value green" id="cmp-gr-det">—</span></div>
           <div class="metric-row"><span class="metric-label">False Positive Rate</span><span class="metric-value" id="cmp-gr-fp">—</span></div>
@@ -322,7 +322,7 @@ td{padding:10px 16px;vertical-align:middle;}
     <div class="card">
       <div class="card-header"><div class="card-title">Detection by Category</div></div>
       <table>
-        <thead><tr><th>Category</th><th>Guardrail</th><th>ModSecurity</th><th>Total</th></tr></thead>
+        <thead><tr><th>Category</th><th>neurawall</th><th>ModSecurity</th><th>Total</th></tr></thead>
         <tbody id="cmp-table"><tr><td colspan="4"><div class="empty">Run python modsecurity_comparison.py first</div></td></tr></tbody>
       </table>
     </div>
@@ -392,7 +392,7 @@ function renderPQC(pqc) {
 
 function renderComparison(cmp) {
   if (!cmp) return;
-  const gr = cmp.guardrail;
+  const gr = cmp.neurawall;
   const ms = cmp.modsecurity;
   if (gr) {
     set('cmp-gr-det', gr.detection_rate + '%');
@@ -407,11 +407,11 @@ function renderComparison(cmp) {
   }
   if (cmp.by_category) {
     document.getElementById('cmp-table').innerHTML = Object.entries(cmp.by_category).map(([cat, d]) => {
-      const gr_r = d.total ? Math.round(d.guardrail/d.total*100) : 0;
+      const gr_r = d.total ? Math.round(d.neurawall/d.total*100) : 0;
       const ms_r = d.total ? Math.round(d.modsecurity/d.total*100) : 0;
       return `<tr>
         <td>${cat}</td>
-        <td><span style="color:${gr_r>=ms_r?'var(--accent)':'var(--warn)'}">${d.guardrail}/${d.total} (${gr_r}%)</span></td>
+        <td><span style="color:${gr_r>=ms_r?'var(--accent)':'var(--warn)'}">${d.neurawall}/${d.total} (${gr_r}%)</span></td>
         <td>${d.modsecurity}/${d.total} (${ms_r}%)</td>
         <td>${d.total}</td>
       </tr>`;

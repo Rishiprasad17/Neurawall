@@ -1,6 +1,6 @@
 
 ============================================================
-  GUARDRAIL BENCHMARK RESULTS
+  neurawall BENCHMARK RESULTS
 ============================================================
 
   DETECTION PERFORMANCE
@@ -33,7 +33,7 @@
 
   SUMMARY FOR RESEARCH PAPER
   --------------------------
-  Guardrail detected 82.4% of OWASP-based attack payloads
+  neurawall detected 82.4% of OWASP-based attack payloads
   across 5 attack categories with a false positive rate
   of 0.0% on legitimate traffic. Rule-based detection
   operates at <5ms latency. AI background scoring adds zero

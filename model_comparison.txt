@@ -20,7 +20,7 @@
   Fastest inference    : phi3 (6796.8ms)
   Most consistent      : mistral (std=0.218)
 
-  RECOMMENDATION FOR GUARDRAIL DEFAULT
+  RECOMMENDATION FOR neurawall DEFAULT
   -------------------------------------
   phi3            weighted score: 0.97 <-- recommended
   llama3          weighted score: 0.836

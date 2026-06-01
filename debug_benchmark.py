@@ -1,6 +1,6 @@
 """
 debug_benchmark.py — Find exactly what is causing false positives
-Run while Guardrail is running.
+Run while neurawall is running.
 Usage: python debug_benchmark.py
 """
 
@@ -11,7 +11,7 @@ from urllib.parse import unquote_plus
 import httpx
 
 BASE_URL    = "http://127.0.0.1:8000"
-DATASET     = r"C:\guardrail\csic_dataset\csic_database.csv"
+DATASET     = r"C:\neurawall\csic_dataset\csic_database.csv"
 RANDOM_SEED = 42
 
 

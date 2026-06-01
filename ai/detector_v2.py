@@ -4,10 +4,10 @@ from typing import Optional
 
 import httpx
 
-from ..core.config import GuardrailConfig
+from ..core.config import neurawallConfig
 from ..core.models import RequestContext
 
-logger = logging.getLogger("guardrail.ai")
+logger = logging.getLogger("neurawall.ai")
 
 SYSTEM_PROMPT = """You are a security analyst for an HTTP middleware system.
 Analyze the incoming request and return a JSON object with exactly this shape:
@@ -43,7 +43,7 @@ class AnomalyDetector:
     Recommended: start with "ollama", fine-tune your own model later.
     """
 
-    def __init__(self, config: GuardrailConfig):
+    def __init__(self, config: neurawallConfig):
         self.config = config
         self.backend = getattr(config, "ai_backend", "anthropic")
         logger.info(f"AI detector using backend: {self.backend}")

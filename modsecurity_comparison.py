@@ -1,5 +1,5 @@
 """
-modsecurity_comparison.py — Compare Guardrail vs ModSecurity-style WAF
+modsecurity_comparison.py — Compare neurawall vs ModSecurity-style WAF
 
 Implements core OWASP CRS detection rules in Python (same logic as
 ModSecurity with OWASP Core Rule Set 3.3).
@@ -10,7 +10,7 @@ Tests both against identical payloads and measures:
 - Latency per request
 
 Usage: python modsecurity_comparison.py
-       (Guardrail must be running on http://127.0.0.1:8000)
+       (neurawall must be running on http://127.0.0.1:8000)
 """
 
 import asyncio
@@ -147,7 +147,7 @@ class Result:
         self.correct = self.is_attack == self.blocked
 
 
-async def test_guardrail(client: httpx.AsyncClient, t: dict) -> Result:
+async def test_neurawall(client: httpx.AsyncClient, t: dict) -> Result:
     start = time.perf_counter()
     try:
         resp = await client.post(f"{BASE_URL}/data",
@@ -170,7 +170,7 @@ def test_modsecurity(t: dict) -> Result:
 async def run_comparison():
     print()
     print("=" * 68)
-    print("  GUARDRAIL vs ModSecurity (OWASP CRS 3.3)")
+    print("  neurawall vs ModSecurity (OWASP CRS 3.3)")
     print("=" * 68)
     print(f"  Test cases: {len(ATTACKS)} attacks + {len(CLEAN)} clean = {len(ALL_TESTS)} total")
     print()
@@ -179,12 +179,12 @@ async def run_comparison():
     print("  Running ModSecurity simulation...")
     ms_results = [test_modsecurity(t) for t in ALL_TESTS]
 
-    # Guardrail results
-    print("  Running Guardrail...")
+    # neurawall results
+    print("  Running neurawall...")
     gr_results = []
     async with httpx.AsyncClient() as client:
         for t in ALL_TESTS:
-            r = await test_guardrail(client, t)
+            r = await test_neurawall(client, t)
             gr_results.append(r)
             await asyncio.sleep(0.05)
 
@@ -206,7 +206,7 @@ async def run_comparison():
             "p95_latency_ms": round(sorted(lats)[int(len(lats)*0.95)], 3),
         }
 
-    gr_sum = summarise(gr_results, "Guardrail")
+    gr_sum = summarise(gr_results, "neurawall")
     ms_sum = summarise(ms_results, "ModSecurity+CRS")
 
     # Per-category breakdown
@@ -216,16 +216,16 @@ async def run_comparison():
         gr_cat = [r for r in gr_results if r.category == cat and r.is_attack]
         ms_cat = [r for r in ms_results if r.category == cat and r.is_attack]
         cat_results[cat] = {
-            "guardrail":    sum(1 for r in gr_cat if r.blocked),
+            "neurawall":    sum(1 for r in gr_cat if r.blocked),
             "modsecurity":  sum(1 for r in ms_cat if r.blocked),
             "total":        len(gr_cat),
         }
 
     lines = [
         "", "=" * 68,
-        "  TABLE IV: Guardrail vs ModSecurity — Detection Comparison",
+        "  TABLE IV: neurawall vs ModSecurity — Detection Comparison",
         "=" * 68, "",
-        f"  {'Metric':<30} {'Guardrail':>14} {'ModSecurity':>14}",
+        f"  {'Metric':<30} {'neurawall':>14} {'ModSecurity':>14}",
         "  " + "-" * 60,
         f"  {'Detection Rate (%)':<30} {gr_sum['detection_rate']:>13}% {ms_sum['detection_rate']:>13}%",
         f"  {'False Positive Rate (%)':<30} {gr_sum['fp_rate']:>13}% {ms_sum['fp_rate']:>13}%",
@@ -237,15 +237,15 @@ async def run_comparison():
         "",
         "  DETECTION BY CATEGORY",
         "  ---------------------",
-        f"  {'Category':<25} {'Guardrail':>12} {'ModSecurity':>12} {'Total':>7}",
+        f"  {'Category':<25} {'neurawall':>12} {'ModSecurity':>12} {'Total':>7}",
         "  " + "-" * 58,
     ]
 
     for cat, data in cat_results.items():
-        gr_rate = data["guardrail"] / data["total"] * 100 if data["total"] else 0
+        gr_rate = data["neurawall"] / data["total"] * 100 if data["total"] else 0
         ms_rate = data["modsecurity"] / data["total"] * 100 if data["total"] else 0
         lines.append(
-            f"  {cat:<25} {data['guardrail']}/{data['total']} ({gr_rate:.0f}%)"
+            f"  {cat:<25} {data['neurawall']}/{data['total']} ({gr_rate:.0f}%)"
             f"  {data['modsecurity']}/{data['total']} ({ms_rate:.0f}%)"
             f"  {data['total']:>5}"
         )
@@ -261,29 +261,29 @@ async def run_comparison():
         "",
         "  ANALYSIS",
         "  --------",
-        f"  Guardrail wins on {gr_wins}/3 primary metrics.",
+        f"  neurawall wins on {gr_wins}/3 primary metrics.",
     ]
 
     if gr_sum["detection_rate"] >= ms_sum["detection_rate"]:
-        lines.append(f"  Detection: Guardrail ({gr_sum['detection_rate']}%) >= ModSecurity ({ms_sum['detection_rate']}%)")
+        lines.append(f"  Detection: neurawall ({gr_sum['detection_rate']}%) >= ModSecurity ({ms_sum['detection_rate']}%)")
     else:
-        lines.append(f"  Detection: ModSecurity ({ms_sum['detection_rate']}%) > Guardrail ({gr_sum['detection_rate']}%)")
+        lines.append(f"  Detection: ModSecurity ({ms_sum['detection_rate']}%) > neurawall ({gr_sum['detection_rate']}%)")
 
     if gr_sum["fp_rate"] <= ms_sum["fp_rate"]:
-        lines.append(f"  False positives: Guardrail ({gr_sum['fp_rate']}%) <= ModSecurity ({ms_sum['fp_rate']}%)")
+        lines.append(f"  False positives: neurawall ({gr_sum['fp_rate']}%) <= ModSecurity ({ms_sum['fp_rate']}%)")
     else:
-        lines.append(f"  False positives: ModSecurity ({ms_sum['fp_rate']}%) < Guardrail ({gr_sum['fp_rate']}%)")
+        lines.append(f"  False positives: ModSecurity ({ms_sum['fp_rate']}%) < neurawall ({gr_sum['fp_rate']}%)")
 
     lines += [
-        f"  Additionally, Guardrail provides AI semantic scoring and",
+        f"  Additionally, neurawall provides AI semantic scoring and",
         f"  quantum-ready key exchange — features absent in ModSecurity.",
         "",
         "  PAPER SUMMARY",
         "  -------------",
-        f"  Guardrail achieved {gr_sum['detection_rate']}% detection vs ModSecurity",
+        f"  neurawall achieved {gr_sum['detection_rate']}% detection vs ModSecurity",
         f"  {ms_sum['detection_rate']}% on identical test cases, with {gr_sum['fp_rate']}% vs",
         f"  {ms_sum['fp_rate']}% false positive rates. Unlike ModSecurity,",
-        f"  Guardrail adds AI-powered semantic scoring and a quantum-",
+        f"  neurawall adds AI-powered semantic scoring and a quantum-",
         f"  ready cryptographic layer without additional configuration.",
         "", "=" * 68, "",
     ]
@@ -292,7 +292,7 @@ async def run_comparison():
     print(report)
 
     with open("comparison_results.json", "w", encoding="utf-8") as f:
-        json.dump({"guardrail": gr_sum, "modsecurity": ms_sum,
+        json.dump({"neurawall": gr_sum, "modsecurity": ms_sum,
                    "by_category": cat_results}, f, indent=2)
     with open("comparison_report.txt", "w", encoding="utf-8") as f:
         f.write(report)

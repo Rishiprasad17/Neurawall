@@ -1,6 +1,6 @@
 """
-benchmark.py -- Guardrail attack detection benchmark suite
-Run while Guardrail is running on http://127.0.0.1:8000
+benchmark.py -- neurawall attack detection benchmark suite
+Run while neurawall is running on http://127.0.0.1:8000
 
 Usage:
     python benchmark.py
@@ -115,7 +115,7 @@ async def check_dashboard_flags():
 async def run_benchmark():
     print()
     print("=" * 60)
-    print("  GUARDRAIL BENCHMARK SUITE")
+    print("  neurawall BENCHMARK SUITE")
     print("  AI-Powered HTTP Security Middleware")
     print("=" * 60)
     print(f"  Target : {BASE_URL}")
@@ -199,7 +199,7 @@ async def run_benchmark():
     report_lines = [
         "",
         "=" * 60,
-        "  GUARDRAIL BENCHMARK RESULTS",
+        "  neurawall BENCHMARK RESULTS",
         "=" * 60,
         "",
         "  DETECTION PERFORMANCE",
@@ -237,7 +237,7 @@ async def run_benchmark():
         "",
         "  SUMMARY FOR RESEARCH PAPER",
         "  --------------------------",
-        f"  Guardrail detected {detection_rate:.1f}% of OWASP-based attack payloads",
+        f"  neurawall detected {detection_rate:.1f}% of OWASP-based attack payloads",
         f"  across {len(categories)} attack categories with a false positive rate",
         f"  of {fp_rate:.1f}% on legitimate traffic. Rule-based detection",
         f"  operates at <5ms latency. AI background scoring adds zero",

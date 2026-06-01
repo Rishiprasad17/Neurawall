@@ -2,7 +2,7 @@
 model_comparison.py — Compare Mistral vs Phi-3 vs Llama3 for HTTP security scoring
 This produces Table II for your research paper.
 
-Run while Ollama is running (no need for Guardrail to be running).
+Run while Ollama is running (no need for neurawall to be running).
 Usage:
     python model_comparison.py
 
@@ -165,7 +165,7 @@ def summarise(results: List[SingleResult], model: str) -> Dict:
 async def run_comparison():
     print()
     print("=" * 64)
-    print("  GUARDRAIL — MULTI-MODEL AI COMPARISON BENCHMARK")
+    print("  neurawall — MULTI-MODEL AI COMPARISON BENCHMARK")
     print("  Mistral 7B  vs  Phi-3  vs  Llama3 8B")
     print("=" * 64)
     print(f"  Test cases : {len(TEST_CASES)} ({sum(1 for t in TEST_CASES if t['is_attack'])} attacks, {sum(1 for t in TEST_CASES if not t['is_attack'])} clean)")
@@ -230,7 +230,7 @@ async def run_comparison():
         f"  Fastest inference    : {best_latency['model']} ({best_latency['avg_latency_ms']}ms)",
         f"  Most consistent      : {best_consistency['model']} (std={best_consistency['score_std_dev']})",
         "",
-        "  RECOMMENDATION FOR GUARDRAIL DEFAULT",
+        "  RECOMMENDATION FOR neurawall DEFAULT",
         "  -------------------------------------",
     ]
 

@@ -3,7 +3,7 @@ from typing import List, Optional
 
 
 @dataclass
-class GuardrailConfig:
+class neurawallConfig:
     # --- Phase 1: Core ---
     log_requests: bool = True
     max_latency_ms: int = 5000          # warn if request exceeds this

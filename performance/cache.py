@@ -5,10 +5,10 @@ from typing import Optional
 
 from starlette.responses import JSONResponse, Response
 
-from ..core.config import GuardrailConfig
+from ..core.config import neurawallConfig
 from ..core.models import RequestContext
 
-logger = logging.getLogger("guardrail.cache")
+logger = logging.getLogger("neurawall.cache")
 
 
 class SmartCache:
@@ -18,7 +18,7 @@ class SmartCache:
     inform TTL — suspicious IPs get shorter cache windows.
     """
 
-    def __init__(self, config: GuardrailConfig):
+    def __init__(self, config: neurawallConfig):
         self.config = config
         self._client = None
         self._connect()
@@ -31,7 +31,7 @@ class SmartCache:
                 encoding="utf-8",
                 decode_responses=True,
             )
-            logger.info("Guardrail cache connected to Redis")
+            logger.info("neurawall cache connected to Redis")
         except ImportError:
             logger.warning("redis package not installed — cache disabled. Run: pip install redis")
         except Exception as e:
@@ -39,7 +39,7 @@ class SmartCache:
 
     def _cache_key(self, ctx: RequestContext) -> str:
         raw = f"{ctx.method}:{ctx.path}:{json.dumps(dict(sorted(ctx.headers.items())))}"
-        return "guardrail:" + hashlib.sha256(raw.encode()).hexdigest()[:24]
+        return "neurawall:" + hashlib.sha256(raw.encode()).hexdigest()[:24]
 
     async def get(self, ctx: RequestContext) -> Optional[Response]:
         if not self._client:

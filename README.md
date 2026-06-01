@@ -170,7 +170,7 @@
 
 # Built in Hyderabad, India
 
-# GitHub: https://github.com/Rishiprasad17/Guardrail
+# GitHub: https://github.com/Rishiprasad17/neurawall
 
 # PyPI: https://pypi.org/project/neurawall/
 

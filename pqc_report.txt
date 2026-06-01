@@ -21,9 +21,9 @@
   Kyber-512 public key     : 800B vs RSA-2048: 294B
   All Kyber variants resist Shor's algorithm. RSA and ECDH do not.
 
-  GUARDRAIL PHASE 5 RECOMMENDATION
+  neurawall PHASE 5 RECOMMENDATION
   ----------------------------------
-  Kyber-512 is recommended as the default KEM for Guardrail.
+  Kyber-512 is recommended as the default KEM for neurawall.
   At 0.027ms encapsulation time it adds negligible
   overhead to HTTP key exchange while providing NIST Level 1
   quantum resistance.

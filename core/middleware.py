@@ -8,18 +8,18 @@ from fastapi import Request, Response
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.responses import JSONResponse
 
-from .config import GuardrailConfig
+from .config import neurawallConfig
 from .models import RequestContext
 
-logger = logging.getLogger("guardrail")
+logger = logging.getLogger("neurawall")
 
 ALWAYS_SKIP = {"/dashboard", "/dashboard/events", "/favicon.ico", "/docs", "/redoc", "/openapi.json"}
 
 
-class GuardrailMiddleware(BaseHTTPMiddleware):
-    def __init__(self, app, config: GuardrailConfig = None):
+class neurawallMiddleware(BaseHTTPMiddleware):
+    def __init__(self, app, config: neurawallConfig = None):
         super().__init__(app)
-        self.config = config or GuardrailConfig()
+        self.config = config or neurawallConfig()
         self._setup_phases()
 
     def _setup_phases(self):
@@ -134,7 +134,7 @@ class GuardrailMiddleware(BaseHTTPMiddleware):
         return JSONResponse(
             status_code=403,
             content={
-                "error": "Request blocked by Guardrail",
+                "error": "Request blocked by neurawall",
                 "reason": ctx.block_reason,
                 "request_id": ctx.request_id,
             },

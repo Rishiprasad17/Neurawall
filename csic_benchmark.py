@@ -1,5 +1,5 @@
 """
-csic_benchmark.py — Test Guardrail against CSIC 2010 HTTP Dataset
+csic_benchmark.py — Test neurawall against CSIC 2010 HTTP Dataset
 Usage: python csic_benchmark.py
 """
 
@@ -16,7 +16,7 @@ from urllib.parse import unquote_plus
 import httpx
 
 BASE_URL    = "http://127.0.0.1:8000"
-DATASET     = r"C:\guardrail\csic_dataset\csic_database.csv"
+DATASET     = r"C:\neurawall\csic_dataset\csic_database.csv"
 SAMPLE_SIZE = 500
 RANDOM_SEED = 42
 
@@ -125,7 +125,7 @@ async def test_request(client: httpx.AsyncClient, entry: dict) -> CSICResult:
 async def run_csic_benchmark():
     print()
     print("=" * 64)
-    print("  GUARDRAIL vs CSIC 2010 HTTP DATASET")
+    print("  neurawall vs CSIC 2010 HTTP DATASET")
     print("=" * 64)
 
     normal, attacks = load_dataset(DATASET)
@@ -147,7 +147,7 @@ async def run_csic_benchmark():
         test = await client.post(f"{BASE_URL}/data",
             json={"msg": "password='; DROP TABLE usuarios; SELECT * FROM datos"},
             timeout=5.0)
-        status = "BLOCKED" if test.status_code == 403 else "PASSED (check Guardrail!)"
+        status = "BLOCKED" if test.status_code == 403 else "PASSED (check neurawall!)"
         print(f"  Sanity check: {status}\n")
 
     results: List[CSICResult] = []
@@ -203,7 +203,7 @@ async def run_csic_benchmark():
         f"  Evaluated against CSIC 2010 HTTP Dataset, a standard benchmark",
         f"  used in 200+ published intrusion detection papers. Testing",
         f"  {len(all_samples)} sampled requests ({len(sample_attacks)} confirmed attack",
-        f"  payloads, {len(sample_normal)} normal), Guardrail achieved",
+        f"  payloads, {len(sample_normal)} normal), neurawall achieved",
         f"  {detection_rate:.1f}% detection with {fp_rate:.1f}% false positives",
         f"  and {avg_latency:.1f}ms average response latency.",
         "", "=" * 64, "",

@@ -6,10 +6,10 @@ import time
 from collections import defaultdict
 
 from fastapi import Request, Response
-from ..core.config import GuardrailConfig
+from ..core.config import neurawallConfig
 from ..core.models import RequestContext
 
-logger = logging.getLogger("guardrail.security")
+logger = logging.getLogger("neurawall.security")
 
 # --- Prompt Injection (high precision — unique phrases) ---
 INJECTION_PATTERNS = [
@@ -97,7 +97,7 @@ class RateLimiter:
 
 
 class SecurityHardener:
-    def __init__(self, config: GuardrailConfig):
+    def __init__(self, config: neurawallConfig):
         self.config = config
         self.rate_limiter = RateLimiter(config.rate_limit_rpm)
 
@@ -126,8 +126,8 @@ class SecurityHardener:
                 payload.encode(),
                 hashlib.sha256,
             ).hexdigest()
-            response.headers["X-Guardrail-Signature"] = sig
-            response.headers["X-Guardrail-Request-ID"] = ctx.request_id
+            response.headers["X-neurawall-Signature"] = sig
+            response.headers["X-neurawall-Request-ID"] = ctx.request_id
         return response
 
     def _verify_jwt(self, token: str) -> bool:

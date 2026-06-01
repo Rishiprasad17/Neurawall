@@ -29,7 +29,7 @@ def bench_rsa():
     private_key = rsa.generate_private_key(
         public_exponent=65537, key_size=2048, backend=default_backend())
     public_key = private_key.public_key()
-    message = b"guardrail_session_key_32byteslong!"
+    message = b"neurawall_session_key_32byteslong!"
     enc_times = bench(lambda: public_key.encrypt(message,
         padding.OAEP(mgf=padding.MGF1(algorithm=hashes.SHA256()),
                      algorithm=hashes.SHA256(), label=None)))
@@ -136,9 +136,9 @@ def run_pqc_benchmark():
         f"  Kyber-512 public key     : {kyber512['public_key_bytes']}B vs RSA-2048: {rsa_r['public_key_bytes']}B",
         f"  All Kyber variants resist Shor's algorithm. RSA and ECDH do not.",
         "",
-        "  GUARDRAIL PHASE 5 RECOMMENDATION",
+        "  neurawall PHASE 5 RECOMMENDATION",
         "  ----------------------------------",
-        f"  Kyber-512 is recommended as the default KEM for Guardrail.",
+        f"  Kyber-512 is recommended as the default KEM for neurawall.",
         f"  At {kyber512['encap_ms']:.3f}ms encapsulation time it adds negligible",
         f"  overhead to HTTP key exchange while providing NIST Level 1",
         f"  quantum resistance.",

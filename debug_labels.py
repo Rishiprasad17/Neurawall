@@ -5,7 +5,7 @@ import csv
 import random
 from urllib.parse import unquote_plus
 
-DATASET     = r"C:\guardrail\csic_dataset\csic_database.csv"
+DATASET     = r"C:\neurawall\csic_dataset\csic_database.csv"
 RANDOM_SEED = 42
 SAMPLE_SIZE = 500
 

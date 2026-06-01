@@ -15,14 +15,14 @@ Install (when ready):
 """
 import logging
 
-from ..core.config import GuardrailConfig
+from ..core.config import neurawallConfig
 from ..core.models import RequestContext
 
-logger = logging.getLogger("guardrail.quantum")
+logger = logging.getLogger("neurawall.quantum")
 
 
 class QuantumLayer:
-    def __init__(self, config: GuardrailConfig):
+    def __init__(self, config: neurawallConfig):
         self.config = config
         self._kyber_available = self._try_import_kyber()
         self._pennylane_available = self._try_import_pennylane()

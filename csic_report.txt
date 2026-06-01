@@ -36,7 +36,7 @@
   Evaluated against CSIC 2010 HTTP Dataset, a standard benchmark
   used in 200+ published intrusion detection papers. Testing
   1000 sampled requests (500 confirmed attack
-  payloads, 500 normal), Guardrail achieved
+  payloads, 500 normal), neurawall achieved
   100.0% detection with 0.0% false positives
   and 579.9ms average response latency.
 

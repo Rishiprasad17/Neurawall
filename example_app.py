@@ -1,5 +1,5 @@
 """
-example_app.py — run this to see Guardrail in action
+example_app.py — run this to see neurawall in action
 
     uvicorn example_app:app --reload
 
@@ -14,13 +14,13 @@ import logging
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
-from guardrail import GuardrailMiddleware, GuardrailConfig
-from guardrail.dashboard import add_dashboard
+from neurawall import neurawallMiddleware, neurawallConfig
+from neurawall.dashboard import add_dashboard
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s | %(name)s | %(message)s")
 
 # --- Configure all phases ---
-config = GuardrailConfig(
+config = neurawallConfig(
     # Phase 1 — always on
     log_requests=True,
     max_latency_ms=3000,
@@ -47,8 +47,8 @@ config = GuardrailConfig(
     debug=True,
 )
 
-app = FastAPI(title="Guardrail Demo")
-app.add_middleware(GuardrailMiddleware, config=config)
+app = FastAPI(title="neurawall Demo")
+app.add_middleware(neurawallMiddleware, config=config)
 add_dashboard(app)
 
 
@@ -59,7 +59,7 @@ async def health():
 
 @app.get("/hello")
 async def hello():
-    return {"message": "Hello — this request passed Guardrail"}
+    return {"message": "Hello — this request passed neurawall"}
 
 
 @app.post("/data")
@@ -70,7 +70,7 @@ async def receive_data(payload: dict):
 @app.get("/metrics")
 async def metrics():
     return {
-        "guardrail_version": "0.1.0",
+        "neurawall_version": "0.1.0",
         "phases": {
             "core": True,
             "ai": config.ai_enabled,

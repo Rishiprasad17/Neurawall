@@ -41,13 +41,13 @@ quantum = ["pennylane"]
 all     = ["redis>=5.0.0", "python-jose[cryptography]>=3.3.0"]
 
 [project.urls]
-Homepage      = "https://github.com/Rishiprasad17/Guardrail"
-Repository    = "https://github.com/Rishiprasad17/Guardrail"
-"Bug Reports" = "https://github.com/Rishiprasad17/Guardrail/issues"
+Homepage      = "https://github.com/Rishiprasad17/neurawall"
+Repository    = "https://github.com/Rishiprasad17/neurawall"
+"Bug Reports" = "https://github.com/Rishiprasad17/neurawall/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["guardrail*"]
+include = ["neurawall*"]
 
 [tool.setuptools.package-data]
-guardrail = ["*.md", "*.txt"]
+neurawall = ["*.md", "*.txt"]

@@ -2,7 +2,7 @@ import csv
 import re
 from urllib.parse import unquote_plus
 
-path = r"C:\guardrail\csic_dataset\csic_database.csv"
+path = r"C:\neurawall\csic_dataset\csic_database.csv"
 
 ALL_PATTERNS = [
     (r"(DROP|TRUNCATE|ALTER)\s+TABLE\s+\w+",    "DROP TABLE"),
