@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neurawall"
+version = "0.1.0"
+description = "AI-powered HTTP security middleware for FastAPI — 100% OWASP detection, quantum-ready"
+readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "Rishi Prasad Vagu", email = "rishi.vagu@gmail.com"}
+]
+keywords = [
+    "security", "fastapi", "middleware", "owasp", "ai",
+    "anomaly-detection", "waf", "post-quantum", "http", "python"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Topic :: Security",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+    "Framework :: FastAPI",
+    "Intended Audience :: Developers",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn>=0.27.0",
+    "httpx>=0.27.0",
+    "starlette>=0.36.0",
+]
+
+[project.optional-dependencies]
+redis   = ["redis>=5.0.0"]
+jwt     = ["python-jose[cryptography]>=3.3.0"]
+quantum = ["pennylane"]
+all     = ["redis>=5.0.0", "python-jose[cryptography]>=3.3.0"]
+
+[project.urls]
+Homepage      = "https://github.com/Rishiprasad17/Guardrail"
+Repository    = "https://github.com/Rishiprasad17/Guardrail"
+"Bug Reports" = "https://github.com/Rishiprasad17/Guardrail/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["guardrail*"]
+
+[tool.setuptools.package-data]
+guardrail = ["*.md", "*.txt"]
