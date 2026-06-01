@@ -1,0 +1,21 @@
+# Core (required)
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+httpx>=0.27.0
+starlette>=0.36.0
+
+# Phase 3 — Security
+python-jose[cryptography]>=3.3.0  # JWT
+pyjwt>=2.8.0
+
+# Phase 4 — Cache
+redis>=5.0.0
+
+# Testing
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+httpx>=0.27.0
+
+# Phase 5 — Quantum (install when ready)
+# pip install open-quantum-safe
+# pip install pennylane

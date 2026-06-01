@@ -1,0 +1,13 @@
+{
+  "dataset": "CSIC 2010",
+  "total_normal": 36000,
+  "total_attacks": 2386,
+  "sample_tested": 1000,
+  "detection_rate": 100.0,
+  "fp_rate": 0.0,
+  "avg_latency_ms": 579.92,
+  "p95_latency_ms": 1243.6,
+  "detected": 500,
+  "missed": 0,
+  "false_positives": 0
+}

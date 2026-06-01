@@ -1,0 +1,68 @@
+{
+  "iterations": 100,
+  "results": [
+    {
+      "algorithm": "RSA-2048",
+      "type": "Classical",
+      "source": "measured",
+      "keygen_ms": 239.662,
+      "encap_ms": 0.214,
+      "decap_ms": 4.514,
+      "public_key_bytes": 294,
+      "private_key_bytes": 1218,
+      "ciphertext_bytes": 256,
+      "quantum_safe": false
+    },
+    {
+      "algorithm": "ECDH P-256",
+      "type": "Classical",
+      "source": "measured",
+      "keygen_ms": 0.117,
+      "encap_ms": 0.554,
+      "decap_ms": 0.0,
+      "public_key_bytes": 91,
+      "private_key_bytes": 138,
+      "ciphertext_bytes": 65,
+      "quantum_safe": false
+    },
+    {
+      "algorithm": "Kyber-512",
+      "type": "Post-Quantum",
+      "source": "NIST PQC ref [8]",
+      "keygen_ms": 0.022,
+      "encap_ms": 0.027,
+      "decap_ms": 0.025,
+      "public_key_bytes": 800,
+      "private_key_bytes": 1632,
+      "ciphertext_bytes": 768,
+      "quantum_safe": true,
+      "security_level": "NIST Level 1 (AES-128)"
+    },
+    {
+      "algorithm": "Kyber-768",
+      "type": "Post-Quantum",
+      "source": "NIST PQC ref [8]",
+      "keygen_ms": 0.037,
+      "encap_ms": 0.045,
+      "decap_ms": 0.041,
+      "public_key_bytes": 1184,
+      "private_key_bytes": 2400,
+      "ciphertext_bytes": 1088,
+      "quantum_safe": true,
+      "security_level": "NIST Level 3 (AES-192)"
+    },
+    {
+      "algorithm": "Kyber-1024",
+      "type": "Post-Quantum",
+      "source": "NIST PQC ref [8]",
+      "keygen_ms": 0.053,
+      "encap_ms": 0.064,
+      "decap_ms": 0.058,
+      "public_key_bytes": 1568,
+      "private_key_bytes": 3168,
+      "ciphertext_bytes": 1568,
+      "quantum_safe": true,
+      "security_level": "NIST Level 5 (AES-256)"
+    }
+  ]
+}

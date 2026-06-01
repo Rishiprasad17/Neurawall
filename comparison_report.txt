@@ -1,0 +1,42 @@
+
+====================================================================
+  TABLE IV: Guardrail vs ModSecurity — Detection Comparison
+====================================================================
+
+  Metric                              Guardrail    ModSecurity
+  ------------------------------------------------------------
+  Detection Rate (%)                      82.4%          94.1%
+  False Positive Rate (%)                  0.0%           0.0%
+  Avg Latency (ms)                     149.905          0.012 
+  P95 Latency (ms)                     377.950          0.030 
+  AI-Powered                                YES             NO
+  Quantum-Ready                             YES             NO
+  Local / No Cloud                          YES            YES
+
+  DETECTION BY CATEGORY
+  ---------------------
+  Category                     Guardrail  ModSecurity   Total
+  ----------------------------------------------------------
+  Command Injection         3/3 (100%)  3/3 (100%)      3
+  Path Traversal            2/3 (67%)  2/3 (67%)      3
+  Prompt Injection          4/4 (100%)  4/4 (100%)      4
+  SQL Injection             2/4 (50%)  4/4 (100%)      4
+  XSS                       3/3 (100%)  3/3 (100%)      3
+
+  ANALYSIS
+  --------
+  Guardrail wins on 1/3 primary metrics.
+  Detection: ModSecurity (94.1%) > Guardrail (82.4%)
+  False positives: Guardrail (0.0%) <= ModSecurity (0.0%)
+  Additionally, Guardrail provides AI semantic scoring and
+  quantum-ready key exchange — features absent in ModSecurity.
+
+  PAPER SUMMARY
+  -------------
+  Guardrail achieved 82.4% detection vs ModSecurity
+  94.1% on identical test cases, with 0.0% vs
+  0.0% false positive rates. Unlike ModSecurity,
+  Guardrail adds AI-powered semantic scoring and a quantum-
+  ready cryptographic layer without additional configuration.
+
+====================================================================

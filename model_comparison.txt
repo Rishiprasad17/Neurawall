@@ -1,0 +1,29 @@
+
+================================================================
+  TABLE II: LLM Model Comparison for HTTP Anomaly Scoring
+================================================================
+
+  Metric                         Mistral 7B        Phi-3    Llama3 8B
+  ------------------------------------------------------------
+  Detection Rate (%)                   85.7% *         85.7% *         71.4%  
+  False Positive Rate (%)              33.3%            0.0% *          0.0% *
+  Avg Inference (ms)                8839.1ms        6796.8ms *      9392.3ms  
+  Avg Attack Score                     0.712           0.837 *         0.611  
+  Score Std Deviation                  0.218 *          0.31           0.374  
+
+  * = best value for that metric
+
+  WINNER SUMMARY
+  --------------
+  Best detection rate  : mistral (85.7%)
+  Lowest false positives: phi3 (0.0%)
+  Fastest inference    : phi3 (6796.8ms)
+  Most consistent      : mistral (std=0.218)
+
+  RECOMMENDATION FOR GUARDRAIL DEFAULT
+  -------------------------------------
+  phi3            weighted score: 0.97 <-- recommended
+  llama3          weighted score: 0.836
+  mistral         weighted score: 0.654
+
+================================================================

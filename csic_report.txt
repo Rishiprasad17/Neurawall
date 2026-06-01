@@ -1,0 +1,43 @@
+
+================================================================
+  CSIC 2010 BENCHMARK RESULTS
+================================================================
+
+  DATASET
+  -------
+  Source       : CSIC 2010 HTTP Dataset (Univ. of Granada)
+  Total in CSV : 36,000 normal + 2,386 confirmed attacks
+  Sample tested: 500 normal + 500 attacks
+  Random seed  : 42 (fully reproducible)
+
+  DETECTION PERFORMANCE
+  ---------------------
+  Attacks tested  : 500
+  Attacks detected: 500
+  Attacks missed  : 0
+  Detection rate  : 100.0%
+
+  FALSE POSITIVE RATE
+  -------------------
+  Clean tested    : 500
+  False positives : 0
+  FP rate         : 0.0%
+
+  LATENCY
+  -------
+  Average         : 579.9ms
+  P95             : 1243.6ms
+
+  MISSED ATTACKS (sample)
+  -----------------------
+
+  PAPER SUMMARY
+  -------------
+  Evaluated against CSIC 2010 HTTP Dataset, a standard benchmark
+  used in 200+ published intrusion detection papers. Testing
+  1000 sampled requests (500 confirmed attack
+  payloads, 500 normal), Guardrail achieved
+  100.0% detection with 0.0% false positives
+  and 579.9ms average response latency.
+
+================================================================

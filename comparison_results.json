@@ -1,0 +1,51 @@
+{
+  "guardrail": {
+    "name": "Guardrail",
+    "detection_rate": 82.4,
+    "fp_rate": 0.0,
+    "detected": 14,
+    "false_positives": 0,
+    "total_attacks": 17,
+    "total_clean": 6,
+    "avg_latency_ms": 149.905,
+    "p95_latency_ms": 377.95
+  },
+  "modsecurity": {
+    "name": "ModSecurity+CRS",
+    "detection_rate": 94.1,
+    "fp_rate": 0.0,
+    "detected": 16,
+    "false_positives": 0,
+    "total_attacks": 17,
+    "total_clean": 6,
+    "avg_latency_ms": 0.012,
+    "p95_latency_ms": 0.03
+  },
+  "by_category": {
+    "Command Injection": {
+      "guardrail": 3,
+      "modsecurity": 3,
+      "total": 3
+    },
+    "Path Traversal": {
+      "guardrail": 2,
+      "modsecurity": 2,
+      "total": 3
+    },
+    "Prompt Injection": {
+      "guardrail": 4,
+      "modsecurity": 4,
+      "total": 4
+    },
+    "SQL Injection": {
+      "guardrail": 2,
+      "modsecurity": 4,
+      "total": 4
+    },
+    "XSS": {
+      "guardrail": 3,
+      "modsecurity": 3,
+      "total": 3
+    }
+  }
+}
