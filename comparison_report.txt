@@ -7,8 +7,8 @@
   ------------------------------------------------------------
   Detection Rate (%)                     100.0%          94.1%
   False Positive Rate (%)                  0.0%           0.0%
-  Avg Latency (ms)                     123.454          0.016 
-  P95 Latency (ms)                     494.130          0.028 
+  Avg Latency (ms)                      94.068          0.011 
+  P95 Latency (ms)                     358.000          0.018 
   AI-Powered                                YES             NO
   Quantum-Ready                             YES             NO
   Local / No Cloud                          YES            YES

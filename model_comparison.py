@@ -22,7 +22,7 @@ import httpx
 
 OLLAMA_URL = "http://localhost:11434/api/chat"
 
-MODELS = ["mistral", "phi3", "phi3:medium", "llama3"]
+MODELS = ["neurawall-phi3", "phi3:medium", "phi3", "mistral"]
 
 SYSTEM_PROMPT = """You are a security analyst for an HTTP middleware system.
 Analyze the incoming request and return a JSON object with exactly this shape:

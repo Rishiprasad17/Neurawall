@@ -7,8 +7,8 @@
     "false_positives": 0,
     "total_attacks": 17,
     "total_clean": 6,
-    "avg_latency_ms": 123.454,
-    "p95_latency_ms": 494.13
+    "avg_latency_ms": 94.068,
+    "p95_latency_ms": 358.0
   },
   "modsecurity": {
     "name": "ModSecurity+CRS",
@@ -18,8 +18,8 @@
     "false_positives": 0,
     "total_attacks": 17,
     "total_clean": 6,
-    "avg_latency_ms": 0.016,
-    "p95_latency_ms": 0.028
+    "avg_latency_ms": 0.011,
+    "p95_latency_ms": 0.018
   },
   "by_category": {
     "Command Injection": {

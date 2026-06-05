@@ -26,7 +26,7 @@ config = GuardrailConfig(
     # Phase 2 — AI (local Ollama)
     ai_enabled=True,
     ai_backend="ollama",
-    ollama_model="phi3:medium",
+    ollama_model="neurawall-phi3",
     anomaly_threshold=0.75,
 
     # Phase 3 — Security

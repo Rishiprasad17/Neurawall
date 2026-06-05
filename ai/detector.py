@@ -174,7 +174,7 @@ class AIDetector:
 
         async with httpx.AsyncClient() as client:
             resp = await client.post(
-                f"{self.config.ollama_base_url}/api/chat",
+                f"http://localhost:11434/api/chat",
                 json={
                     "model": self.config.ollama_model,
                     "messages": messages,
@@ -184,7 +184,7 @@ class AIDetector:
                         "num_predict": 200,
                     }
                 },
-                timeout=30.0,
+                timeout=60.0,
             )
             data = resp.json()
             content = data.get("message", {}).get("content", "")
@@ -213,7 +213,7 @@ class AIDetector:
                     "system": SYSTEM_PROMPT,
                     "messages": messages,
                 },
-                timeout=30.0,
+                timeout=90.0,
             )
             data = resp.json()
             content = data.get("content", [{}])[0].get("text", "")
@@ -233,7 +233,7 @@ class AIDetector:
                     "temperature": 0.1,
                     "max_tokens": 200,
                 },
-                timeout=30.0,
+                timeout=90.0,
             )
             data = resp.json()
             content = data["choices"][0]["message"]["content"]
@@ -276,3 +276,4 @@ class AIDetector:
         except Exception as e:
             logger.warning(f"Failed to parse AI response: {e} | raw: {content[:100]}")
             return 0.0
+

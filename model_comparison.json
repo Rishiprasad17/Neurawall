@@ -1,216 +1,75 @@
 {
   "summaries": [
     {
-      "model": "mistral",
-      "detection_rate": 85.7,
-      "fp_rate": 33.3,
-      "avg_latency_ms": 6687.5,
-      "avg_attack_score": 0.714,
-      "score_std_dev": 0.249,
-      "correct_attacks": 12,
-      "total_attacks": 14,
-      "false_positives": 1
-    },
-    {
-      "model": "phi3",
-      "detection_rate": 85.7,
-      "fp_rate": 0.0,
-      "avg_latency_ms": 6132.2,
-      "avg_attack_score": 0.864,
-      "score_std_dev": 0.301,
-      "correct_attacks": 12,
-      "total_attacks": 14,
-      "false_positives": 0
-    },
-    {
-      "model": "phi3:medium",
+      "model": "neurawall-phi3",
       "detection_rate": 100.0,
       "fp_rate": 0.0,
-      "avg_latency_ms": 14879.2,
-      "avg_attack_score": 0.829,
-      "score_std_dev": 0.085,
+      "avg_latency_ms": 7972.8,
+      "avg_attack_score": 0.951,
+      "score_std_dev": 0.025,
       "correct_attacks": 14,
       "total_attacks": 14,
       "false_positives": 0
     },
     {
-      "model": "llama3",
-      "detection_rate": 78.6,
+      "model": "phi3:medium",
+      "detection_rate": 85.7,
       "fp_rate": 0.0,
-      "avg_latency_ms": 7139.9,
-      "avg_attack_score": 0.66,
-      "score_std_dev": 0.371,
-      "correct_attacks": 11,
+      "avg_latency_ms": 14398.8,
+      "avg_attack_score": 0.807,
+      "score_std_dev": 0.185,
+      "correct_attacks": 12,
       "total_attacks": 14,
       "false_positives": 0
-    }
-  ],
-  "weighted_scores": {
-    "mistral": 0.561,
-    "phi3": 0.871,
-    "phi3:medium": 0.882,
-    "llama3": 0.809
-  },
-  "recommended_model": "phi3:medium",
-  "raw_results": [
-    {
-      "model": "mistral",
-      "results": [
-        {
-          "test_id": "PI-01",
-          "category": "Prompt Injection",
-          "is_attack": true,
-          "score": 0.6,
-          "latency_ms": 7561.9,
-          "correct": true
-        },
-        {
-          "test_id": "PI-02",
-          "category": "Prompt Injection",
-          "is_attack": true,
-          "score": 0.6,
-          "latency_ms": 7861.2,
-          "correct": true
-        },
-        {
-          "test_id": "PI-03",
-          "category": "Prompt Injection",
-          "is_attack": true,
-          "score": 0.7,
-          "latency_ms": 9338.3,
-          "correct": true
-        },
-        {
-          "test_id": "PI-04",
-          "category": "Prompt Injection",
-          "is_attack": true,
-          "score": 0.2,
-          "latency_ms": 5627.2,
-          "correct": false
-        },
-        {
-          "test_id": "SQL-01",
-          "category": "SQL Injection",
-          "is_attack": true,
-          "score": 1.0,
-          "latency_ms": 5227.4,
-          "correct": true
-        },
-        {
-          "test_id": "SQL-02",
-          "category": "SQL Injection",
-          "is_attack": true,
-          "score": 0.3,
-          "latency_ms": 5571.4,
-          "correct": false
-        },
-        {
-          "test_id": "SQL-03",
-          "category": "SQL Injection",
-          "is_attack": true,
-          "score": 0.75,
-          "latency_ms": 5872.7,
-          "correct": true
-        },
-        {
-          "test_id": "SQL-04",
-          "category": "SQL Injection",
-          "is_attack": true,
-          "score": 0.75,
-          "latency_ms": 6199.7,
-          "correct": true
-        },
-        {
-          "test_id": "XSS-01",
-          "category": "XSS",
-          "is_attack": true,
-          "score": 1.0,
-          "latency_ms": 6084.7,
-          "correct": true
-        },
-        {
-          "test_id": "XSS-02",
-          "category": "XSS",
-          "is_attack": true,
-          "score": 0.75,
-          "latency_ms": 8519.2,
-          "correct": true
-        },
-        {
-          "test_id": "XSS-03",
-          "category": "XSS",
-          "is_attack": true,
-          "score": 0.75,
-          "latency_ms": 8246.9,
-          "correct": true
-        },
-        {
-          "test_id": "PT-01",
-          "category": "Path Traversal",
-          "is_attack": true,
-          "score": 0.6,
-          "latency_ms": 6418.7,
-          "correct": true
-        },
-        {
-          "test_id": "PT-02",
-          "category": "Path Traversal",
-          "is_attack": true,
-          "score": 1.0,
-          "latency_ms": 7542.0,
-          "correct": true
-        },
-        {
-          "test_id": "CMD-01",
-          "category": "Command Injection",
-          "is_attack": true,
-          "score": 1.0,
-          "latency_ms": 6131.9,
-          "correct": true
-        },
-        {
-          "test_id": "CLN-01",
-          "category": "Clean",
-          "is_attack": false,
-          "score": 0.0,
-          "latency_ms": 5123.2,
-          "correct": true
-        },
-        {
-          "test_id": "CLN-02",
-          "category": "Clean",
-          "is_attack": false,
-          "score": 0.2,
-          "latency_ms": 6608.5,
-          "correct": true
-        },
-        {
-          "test_id": "CLN-03",
-          "category": "Clean",
-          "is_attack": false,
-          "score": 0.6,
-          "latency_ms": 5753.2,
-          "correct": false
-        }
-      ]
     },
     {
       "model": "phi3",
+      "detection_rate": 78.6,
+      "fp_rate": 33.3,
+      "avg_latency_ms": 5550.1,
+      "avg_attack_score": 0.786,
+      "score_std_dev": 0.324,
+      "correct_attacks": 11,
+      "total_attacks": 14,
+      "false_positives": 1
+    },
+    {
+      "model": "mistral",
+      "detection_rate": 85.7,
+      "fp_rate": 33.3,
+      "avg_latency_ms": 8553.3,
+      "avg_attack_score": 0.724,
+      "score_std_dev": 0.194,
+      "correct_attacks": 12,
+      "total_attacks": 14,
+      "false_positives": 1
+    }
+  ],
+  "weighted_scores": {
+    "neurawall-phi3": 0.939,
+    "phi3:medium": 0.734,
+    "phi3": 0.522,
+    "mistral": 0.486
+  },
+  "recommended_model": "neurawall-phi3",
+  "raw_results": [
+    {
+      "model": "neurawall-phi3",
       "results": [
         {
           "test_id": "PI-01",
           "category": "Prompt Injection",
           "is_attack": true,
-          "score": 1.0,
-          "latency_ms": 14963.3,
+          "score": 0.95,
+          "latency_ms": 8928.1,
           "correct": true
         },
         {
           "test_id": "PI-02",
           "category": "Prompt Injection",
           "is_attack": true,
-          "score": 0.95,
-          "latency_ms": 5083.2,
+          "score": 0.98,
+          "latency_ms": 9187.9,
           "correct": true
         },
         {
@@ -218,23 +77,23 @@
           "category": "Prompt Injection",
           "is_attack": true,
           "score": 0.95,
-          "latency_ms": 5072.4,
+          "latency_ms": 7935.4,
           "correct": true
         },
         {
           "test_id": "PI-04",
           "category": "Prompt Injection",
           "is_attack": true,
-          "score": 0.35,
-          "latency_ms": 4423.7,
-          "correct": false
+          "score": 0.9,
+          "latency_ms": 7290.8,
+          "correct": true
         },
         {
           "test_id": "SQL-01",
           "category": "SQL Injection",
           "is_attack": true,
-          "score": 1.0,
-          "latency_ms": 4328.3,
+          "score": 0.95,
+          "latency_ms": 9375.7,
           "correct": true
         },
         {
@@ -242,55 +101,55 @@
           "category": "SQL Injection",
           "is_attack": true,
           "score": 0.95,
-          "latency_ms": 4941.2,
+          "latency_ms": 7814.8,
           "correct": true
         },
         {
           "test_id": "SQL-03",
           "category": "SQL Injection",
           "is_attack": true,
-          "score": 0.0,
-          "latency_ms": 16383.5,
-          "correct": false
+          "score": 0.92,
+          "latency_ms": 7798.7,
+          "correct": true
         },
         {
           "test_id": "SQL-04",
           "category": "SQL Injection",
           "is_attack": true,
-          "score": 1.0,
-          "latency_ms": 3778.7,
+          "score": 0.988,
+          "latency_ms": 9002.7,
           "correct": true
         },
         {
           "test_id": "XSS-01",
           "category": "XSS",
           "is_attack": true,
-          "score": 1.0,
-          "latency_ms": 5901.1,
+          "score": 0.95,
+          "latency_ms": 7009.6,
           "correct": true
         },
         {
           "test_id": "XSS-02",
           "category": "XSS",
           "is_attack": true,
-          "score": 1.0,
-          "latency_ms": 5582.7,
+          "score": 0.92,
+          "latency_ms": 10080.0,
           "correct": true
         },
         {
           "test_id": "XSS-03",
           "category": "XSS",
           "is_attack": true,
-          "score": 1.0,
-          "latency_ms": 5241.4,
+          "score": 0.98,
+          "latency_ms": 7290.0,
           "correct": true
         },
         {
           "test_id": "PT-01",
           "category": "Path Traversal",
           "is_attack": true,
-          "score": 1.0,
-          "latency_ms": 4083.0,
+          "score": 0.98,
+          "latency_ms": 7762.5,
           "correct": true
         },
         {
@@ -298,7 +157,7 @@
           "category": "Path Traversal",
           "is_attack": true,
           "score": 0.95,
-          "latency_ms": 4596.9,
+          "latency_ms": 8250.6,
           "correct": true
         },
         {
@@ -306,31 +165,31 @@
           "category": "Command Injection",
           "is_attack": true,
           "score": 0.95,
-          "latency_ms": 5504.5,
+          "latency_ms": 7776.9,
           "correct": true
         },
         {
           "test_id": "CLN-01",
           "category": "Clean",
           "is_attack": false,
-          "score": 0.0,
-          "latency_ms": 5600.5,
+          "score": 0.18,
+          "latency_ms": 6956.0,
           "correct": true
         },
         {
           "test_id": "CLN-02",
           "category": "Clean",
           "is_attack": false,
-          "score": 0.0,
-          "latency_ms": 4889.3,
+          "score": 0.3,
+          "latency_ms": 6767.4,
           "correct": true
         },
         {
           "test_id": "CLN-03",
           "category": "Clean",
           "is_attack": false,
-          "score": 0.3,
-          "latency_ms": 3874.2,
+          "score": 0.28,
+          "latency_ms": 6310.3,
           "correct": true
         }
       ]
@@ -342,40 +201,40 @@
           "test_id": "PI-01",
           "category": "Prompt Injection",
           "is_attack": true,
-          "score": 0.95,
-          "latency_ms": 47376.0,
+          "score": 0.85,
+          "latency_ms": 48955.9,
           "correct": true
         },
         {
           "test_id": "PI-02",
           "category": "Prompt Injection",
           "is_attack": true,
-          "score": 0.75,
-          "latency_ms": 14698.6,
-          "correct": true
+          "score": 0.5,
+          "latency_ms": 12616.0,
+          "correct": false
         },
         {
           "test_id": "PI-03",
           "category": "Prompt Injection",
           "is_attack": true,
           "score": 0.75,
-          "latency_ms": 17085.6,
+          "latency_ms": 10652.7,
           "correct": true
         },
         {
           "test_id": "PI-04",
           "category": "Prompt Injection",
           "is_attack": true,
-          "score": 0.65,
-          "latency_ms": 13097.6,
-          "correct": true
+          "score": 0.3,
+          "latency_ms": 12413.2,
+          "correct": false
         },
         {
           "test_id": "SQL-01",
           "category": "SQL Injection",
           "is_attack": true,
-          "score": 0.9,
-          "latency_ms": 12774.8,
+          "score": 0.95,
+          "latency_ms": 13097.7,
           "correct": true
         },
         {
@@ -383,15 +242,15 @@
           "category": "SQL Injection",
           "is_attack": true,
           "score": 0.85,
-          "latency_ms": 14884.1,
+          "latency_ms": 13485.8,
           "correct": true
         },
         {
           "test_id": "SQL-03",
           "category": "SQL Injection",
           "is_attack": true,
-          "score": 0.8,
-          "latency_ms": 12844.3,
+          "score": 0.9,
+          "latency_ms": 12048.0,
           "correct": true
         },
         {
@@ -399,7 +258,7 @@
           "category": "SQL Injection",
           "is_attack": true,
           "score": 0.85,
-          "latency_ms": 12941.9,
+          "latency_ms": 14215.8,
           "correct": true
         },
         {
@@ -407,47 +266,47 @@
           "category": "XSS",
           "is_attack": true,
           "score": 0.95,
-          "latency_ms": 12957.5,
+          "latency_ms": 10151.2,
           "correct": true
         },
         {
           "test_id": "XSS-02",
           "category": "XSS",
           "is_attack": true,
-          "score": 0.75,
-          "latency_ms": 11349.6,
+          "score": 0.85,
+          "latency_ms": 13956.5,
           "correct": true
         },
         {
           "test_id": "XSS-03",
           "category": "XSS",
           "is_attack": true,
-          "score": 0.85,
-          "latency_ms": 13319.0,
+          "score": 0.9,
+          "latency_ms": 10818.9,
           "correct": true
         },
         {
           "test_id": "PT-01",
           "category": "Path Traversal",
           "is_attack": true,
-          "score": 0.9,
-          "latency_ms": 10831.0,
+          "score": 0.85,
+          "latency_ms": 11786.5,
           "correct": true
         },
         {
           "test_id": "PT-02",
           "category": "Path Traversal",
           "is_attack": true,
-          "score": 0.8,
-          "latency_ms": 11996.0,
+          "score": 0.85,
+          "latency_ms": 12628.1,
           "correct": true
         },
         {
           "test_id": "CMD-01",
           "category": "Command Injection",
           "is_attack": true,
-          "score": 0.85,
-          "latency_ms": 14683.3,
+          "score": 0.95,
+          "latency_ms": 11264.6,
           "correct": true
         },
         {
@@ -455,15 +314,15 @@
           "category": "Clean",
           "is_attack": false,
           "score": 0.3,
-          "latency_ms": 10083.8,
+          "latency_ms": 14043.3,
           "correct": true
         },
         {
           "test_id": "CLN-02",
           "category": "Clean",
           "is_attack": false,
-          "score": 0.25,
-          "latency_ms": 11415.3,
+          "score": 0.1,
+          "latency_ms": 12449.2,
           "correct": true
         },
         {
@@ -471,116 +330,116 @@
           "category": "Clean",
           "is_attack": false,
           "score": 0.0,
-          "latency_ms": 10607.6,
+          "latency_ms": 10195.7,
           "correct": true
         }
       ]
     },
     {
-      "model": "llama3",
+      "model": "phi3",
       "results": [
         {
           "test_id": "PI-01",
           "category": "Prompt Injection",
           "is_attack": true,
-          "score": 0.0,
-          "latency_ms": 20535.6,
-          "correct": false
+          "score": 1.0,
+          "latency_ms": 19121.1,
+          "correct": true
         },
         {
           "test_id": "PI-02",
           "category": "Prompt Injection",
           "is_attack": true,
-          "score": 0.0,
-          "latency_ms": 5468.7,
+          "score": 0.35,
+          "latency_ms": 5630.8,
           "correct": false
         },
         {
           "test_id": "PI-03",
           "category": "Prompt Injection",
           "is_attack": true,
-          "score": 0.99,
-          "latency_ms": 7871.3,
+          "score": 0.85,
+          "latency_ms": 4735.9,
           "correct": true
         },
         {
           "test_id": "PI-04",
           "category": "Prompt Injection",
           "is_attack": true,
-          "score": 0.0,
-          "latency_ms": 4501.2,
+          "score": 0.3,
+          "latency_ms": 5011.2,
           "correct": false
         },
         {
           "test_id": "SQL-01",
           "category": "SQL Injection",
           "is_attack": true,
-          "score": 0.9,
-          "latency_ms": 6701.5,
+          "score": 0.95,
+          "latency_ms": 4714.5,
           "correct": true
         },
         {
           "test_id": "SQL-02",
           "category": "SQL Injection",
           "is_attack": true,
-          "score": 0.9,
-          "latency_ms": 6258.6,
+          "score": 0.95,
+          "latency_ms": 5114.6,
           "correct": true
         },
         {
           "test_id": "SQL-03",
           "category": "SQL Injection",
           "is_attack": true,
-          "score": 0.75,
-          "latency_ms": 5689.0,
-          "correct": true
+          "score": 0.0,
+          "latency_ms": 5263.5,
+          "correct": false
         },
         {
           "test_id": "SQL-04",
           "category": "SQL Injection",
           "is_attack": true,
-          "score": 0.6,
-          "latency_ms": 5987.8,
+          "score": 0.95,
+          "latency_ms": 4811.0,
           "correct": true
         },
         {
           "test_id": "XSS-01",
           "category": "XSS",
           "is_attack": true,
-          "score": 0.8,
-          "latency_ms": 7471.9,
+          "score": 1.0,
+          "latency_ms": 4097.7,
           "correct": true
         },
         {
           "test_id": "XSS-02",
           "category": "XSS",
           "is_attack": true,
-          "score": 0.8,
-          "latency_ms": 6443.5,
+          "score": 0.95,
+          "latency_ms": 5439.5,
           "correct": true
         },
         {
           "test_id": "XSS-03",
           "category": "XSS",
           "is_attack": true,
-          "score": 0.75,
-          "latency_ms": 5394.3,
+          "score": 1.0,
+          "latency_ms": 4953.0,
           "correct": true
         },
         {
           "test_id": "PT-01",
           "category": "Path Traversal",
           "is_attack": true,
-          "score": 0.9,
-          "latency_ms": 6685.4,
+          "score": 1.0,
+          "latency_ms": 4271.4,
           "correct": true
         },
         {
           "test_id": "PT-02",
           "category": "Path Traversal",
           "is_attack": true,
-          "score": 0.9,
-          "latency_ms": 6766.9,
+          "score": 0.75,
+          "latency_ms": 5259.0,
           "correct": true
         },
         {
@@ -588,32 +447,173 @@
           "category": "Command Injection",
           "is_attack": true,
           "score": 0.95,
-          "latency_ms": 6462.7,
+          "latency_ms": 4111.1,
           "correct": true
         },
         {
           "test_id": "CLN-01",
           "category": "Clean",
           "is_attack": false,
-          "score": 0.2,
-          "latency_ms": 6266.5,
+          "score": 0.1,
+          "latency_ms": 3233.0,
           "correct": true
         },
         {
           "test_id": "CLN-02",
           "category": "Clean",
           "is_attack": false,
-          "score": 0.2,
-          "latency_ms": 7443.1,
+          "score": 0.1,
+          "latency_ms": 3969.6,
           "correct": true
         },
         {
           "test_id": "CLN-03",
           "category": "Clean",
           "is_attack": false,
-          "score": 0.0,
-          "latency_ms": 5431.0,
+          "score": 0.85,
+          "latency_ms": 4614.5,
+          "correct": false
+        }
+      ]
+    },
+    {
+      "model": "mistral",
+      "results": [
+        {
+          "test_id": "PI-01",
+          "category": "Prompt Injection",
+          "is_attack": true,
+          "score": 0.6,
+          "latency_ms": 30181.6,
           "correct": true
+        },
+        {
+          "test_id": "PI-02",
+          "category": "Prompt Injection",
+          "is_attack": true,
+          "score": 0.75,
+          "latency_ms": 9792.6,
+          "correct": true
+        },
+        {
+          "test_id": "PI-03",
+          "category": "Prompt Injection",
+          "is_attack": true,
+          "score": 0.68,
+          "latency_ms": 8095.1,
+          "correct": true
+        },
+        {
+          "test_id": "PI-04",
+          "category": "Prompt Injection",
+          "is_attack": true,
+          "score": 0.4,
+          "latency_ms": 7782.9,
+          "correct": false
+        },
+        {
+          "test_id": "SQL-01",
+          "category": "SQL Injection",
+          "is_attack": true,
+          "score": 1.0,
+          "latency_ms": 7707.7,
+          "correct": true
+        },
+        {
+          "test_id": "SQL-02",
+          "category": "SQL Injection",
+          "is_attack": true,
+          "score": 0.3,
+          "latency_ms": 5880.4,
+          "correct": false
+        },
+        {
+          "test_id": "SQL-03",
+          "category": "SQL Injection",
+          "is_attack": true,
+          "score": 0.75,
+          "latency_ms": 7849.2,
+          "correct": true
+        },
+        {
+          "test_id": "SQL-04",
+          "category": "SQL Injection",
+          "is_attack": true,
+          "score": 0.75,
+          "latency_ms": 6070.8,
+          "correct": true
+        },
+        {
+          "test_id": "XSS-01",
+          "category": "XSS",
+          "is_attack": true,
+          "score": 1.0,
+          "latency_ms": 7738.9,
+          "correct": true
+        },
+        {
+          "test_id": "XSS-02",
+          "category": "XSS",
+          "is_attack": true,
+          "score": 0.75,
+          "latency_ms": 7728.9,
+          "correct": true
+        },
+        {
+          "test_id": "XSS-03",
+          "category": "XSS",
+          "is_attack": true,
+          "score": 0.75,
+          "latency_ms": 7503.4,
+          "correct": true
+        },
+        {
+          "test_id": "PT-01",
+          "category": "Path Traversal",
+          "is_attack": true,
+          "score": 0.75,
+          "latency_ms": 6768.4,
+          "correct": true
+        },
+        {
+          "test_id": "PT-02",
+          "category": "Path Traversal",
+          "is_attack": true,
+          "score": 0.75,
+          "latency_ms": 7097.9,
+          "correct": true
+        },
+        {
+          "test_id": "CMD-01",
+          "category": "Command Injection",
+          "is_attack": true,
+          "score": 0.9,
+          "latency_ms": 6693.5,
+          "correct": true
+        },
+        {
+          "test_id": "CLN-01",
+          "category": "Clean",
+          "is_attack": false,
+          "score": 0.0,
+          "latency_ms": 5750.9,
+          "correct": true
+        },
+        {
+          "test_id": "CLN-02",
+          "category": "Clean",
+          "is_attack": false,
+          "score": 0.3,
+          "latency_ms": 6319.3,
+          "correct": true
+        },
+        {
+          "test_id": "CLN-03",
+          "category": "Clean",
+          "is_attack": false,
+          "score": 0.6,
+          "latency_ms": 6445.2,
+          "correct": false
         }
       ]
     }
