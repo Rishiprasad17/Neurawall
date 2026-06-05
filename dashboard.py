@@ -68,7 +68,7 @@ def add_dashboard(app: FastAPI):
             except Exception:
                 pass
 
-    logging.getLogger("neurawall").addHandler(DashboardHandler())
+    logging.getLogger("guardrail").addHandler(DashboardHandler())
 
 
 DASHBOARD_HTML = """<!DOCTYPE html>
@@ -478,3 +478,5 @@ setInterval(refresh, 2000);
 </script>
 </body>
 </html>"""
+
+

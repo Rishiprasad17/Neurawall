@@ -5,4 +5,4 @@ neurawall.egg-info/SOURCES.txt
 neurawall.egg-info/dependency_links.txt
 neurawall.egg-info/requires.txt
 neurawall.egg-info/top_level.txt
-tests/test_neurawall.py
+tests/test_guardrail.py

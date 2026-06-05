@@ -3,7 +3,7 @@ from typing import List, Optional
 
 
 @dataclass
-class neurawallConfig:
+class NeurawallConfig:
     # --- Phase 1: Core ---
     log_requests: bool = True
     max_latency_ms: int = 5000          # warn if request exceeds this
@@ -41,3 +41,5 @@ class neurawallConfig:
     # --- General ---
     excluded_paths: List[str] = field(default_factory=lambda: ["/health", "/metrics"])
     debug: bool = False
+
+

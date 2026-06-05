@@ -5,10 +5,10 @@ from typing import Optional
 
 from starlette.responses import JSONResponse, Response
 
-from ..core.config import neurawallConfig
+from ..core.config import NeurawallConfig
 from ..core.models import RequestContext
 
-logger = logging.getLogger("neurawall.cache")
+logger = logging.getLogger("guardrail.cache")
 
 
 class SmartCache:
@@ -18,7 +18,7 @@ class SmartCache:
     inform TTL — suspicious IPs get shorter cache windows.
     """
 
-    def __init__(self, config: neurawallConfig):
+    def __init__(self, config: NeurawallConfig):
         self.config = config
         self._client = None
         self._connect()
@@ -73,3 +73,5 @@ class SmartCache:
             logger.debug(f"[{ctx.request_id}] Cache SET {key} TTL={effective_ttl}s")
         except Exception as e:
             logger.debug(f"Cache set error: {e}")
+
+

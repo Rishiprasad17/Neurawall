@@ -1,0 +1,32 @@
+{
+  "detection_rate": 93.57,
+  "fp_rate": 2.0,
+  "total_attacks": 280,
+  "total_clean": 50,
+  "avg_latency_ms": 53.72,
+  "detected": 262,
+  "missed": 18,
+  "false_positives": 1,
+  "by_category": {
+    "Command Injection": {
+      "total": 74,
+      "detected": 70
+    },
+    "Path Traversal": {
+      "total": 42,
+      "detected": 40
+    },
+    "SQL Injection": {
+      "total": 77,
+      "detected": 69
+    },
+    "XSS": {
+      "total": 48,
+      "detected": 48
+    },
+    "Prompt Injection": {
+      "total": 39,
+      "detected": 35
+    }
+  }
+}

@@ -1,8 +1,0 @@
-README.md
-pyproject.toml
-neurawall_ai.egg-info/PKG-INFO
-neurawall_ai.egg-info/SOURCES.txt
-neurawall_ai.egg-info/dependency_links.txt
-neurawall_ai.egg-info/requires.txt
-neurawall_ai.egg-info/top_level.txt
-tests/test_neurawall.py

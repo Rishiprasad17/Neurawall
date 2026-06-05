@@ -33,3 +33,5 @@ class RequestContext:
             "cache_hit": self.cache_hit,
             "latency_ms": round(self.latency_ms, 2),
         }
+
+

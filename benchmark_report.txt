@@ -6,10 +6,10 @@
   DETECTION PERFORMANCE
   ---------------------
   Total attacks tested    : 17
-  Blocked by rules (0ms)  : 14
+  Blocked by rules (0ms)  : 17
   Flagged by AI (async)   : 0
-  Combined detection      : 14
-  Detection rate          : 82.4%
+  Combined detection      : 17
+  Detection rate          : 100.0%
 
   FALSE POSITIVE RATE
   -------------------
@@ -19,24 +19,24 @@
 
   LATENCY (ms)
   ------------
-  Average latency         : 410.7ms
-  P95 latency             : 1232.4ms
+  Average latency         : 67.1ms
+  P95 latency             : 219.5ms
   Rule block latency      : <5ms (instant)
 
   DETECTION BY CATEGORY
   ---------------------
   Prompt Injection          [####]  4/4  (100%) rule-blocked
-  SQL Injection             [##--]  2/4  (50%) rule-blocked
+  SQL Injection             [####]  4/4  (100%) rule-blocked
   XSS                       [###]  3/3  (100%) rule-blocked
-  Path Traversal            [##-]  2/3  (67%) rule-blocked
+  Path Traversal            [###]  3/3  (100%) rule-blocked
   Command Injection         [###]  3/3  (100%) rule-blocked
 
   SUMMARY FOR RESEARCH PAPER
   --------------------------
-  neurawall detected 82.4% of OWASP-based attack payloads
+  neurawall detected 100.0% of OWASP-based attack payloads
   across 5 attack categories with a false positive rate
   of 0.0% on legitimate traffic. Rule-based detection
   operates at <5ms latency. AI background scoring adds zero
-  latency to responses (async). Average response time: 410.7ms.
+  latency to responses (async). Average response time: 67.1ms.
 
 ============================================================

@@ -1,0 +1,52 @@
+{
+  "test_type": "blind_non_labelled",
+  "sources": [
+    "PayloadsAllTheThings",
+    "SecLists",
+    "OWASP Testing Guide",
+    "AI Security Research 2024"
+  ],
+  "detection_rate": 90.48,
+  "fp_rate": 12.5,
+  "avg_latency_ms": 160.99,
+  "p95_latency_ms": 566.1,
+  "detected": 19,
+  "missed": 2,
+  "false_positives": 1,
+  "by_category": {
+    "SQL Injection": {
+      "detected": 5,
+      "total": 5,
+      "missed": []
+    },
+    "XSS": {
+      "detected": 4,
+      "total": 4,
+      "missed": []
+    },
+    "Path Traversal": {
+      "detected": 2,
+      "total": 3,
+      "missed": [
+        "BPT-03"
+      ]
+    },
+    "Command Injection": {
+      "detected": 3,
+      "total": 3,
+      "missed": []
+    },
+    "Prompt Injection": {
+      "detected": 3,
+      "total": 3,
+      "missed": []
+    },
+    "Novel/Obfuscated": {
+      "detected": 2,
+      "total": 3,
+      "missed": [
+        "BNOV-02"
+      ]
+    }
+  }
+}

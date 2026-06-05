@@ -25,8 +25,8 @@
 
   LATENCY
   -------
-  Average         : 579.9ms
-  P95             : 1243.6ms
+  Average         : 215.0ms
+  P95             : 488.8ms
 
   MISSED ATTACKS (sample)
   -----------------------
@@ -38,6 +38,6 @@
   1000 sampled requests (500 confirmed attack
   payloads, 500 normal), neurawall achieved
   100.0% detection with 0.0% false positives
-  and 579.9ms average response latency.
+  and 215.0ms average response latency.
 
 ================================================================

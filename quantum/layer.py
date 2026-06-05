@@ -15,14 +15,14 @@ Install (when ready):
 """
 import logging
 
-from ..core.config import neurawallConfig
+from ..core.config import NeurawallConfig
 from ..core.models import RequestContext
 
-logger = logging.getLogger("neurawall.quantum")
+logger = logging.getLogger("guardrail.quantum")
 
 
 class QuantumLayer:
-    def __init__(self, config: neurawallConfig):
+    def __init__(self, config: NeurawallConfig):
         self.config = config
         self._kyber_available = self._try_import_kyber()
         self._pennylane_available = self._try_import_pennylane()
@@ -108,3 +108,5 @@ class QMLScorer:
         except Exception as e:
             logger.warning(f"QML scoring error: {e}")
             return classical_score
+
+

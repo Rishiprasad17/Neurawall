@@ -1,8 +1,6 @@
-# neurawall — AI-powered HTTP security middleware
-__version__ = "0.1.0"
-__author__ = "Your Name"
-
-from .core.middleware import neurawallMiddleware
-from .core.config import neurawallConfig
-
-__all__ = ["neurawallMiddleware", "neurawallConfig"]
+from .core.middleware import NeurawallMiddleware
+from .core.config import NeurawallConfig
+GuardrailMiddleware = NeurawallMiddleware
+GuardrailConfig = NeurawallConfig
+__version__ = '0.2.0'
+__all__ = ['NeurawallMiddleware', 'NeurawallConfig', 'GuardrailMiddleware', 'GuardrailConfig']

@@ -5,8 +5,8 @@
 
   Algorithm      Type              KeyGen     Encap    Decap   PubKey      CT  QSafe
   --------------------------------------------------------------------
-  RSA-2048       Classical       239.662ms    0.214ms  4.514ms     294B    256B     NO  
-  ECDH P-256     Classical         0.117ms    0.554ms      N/A      91B     65B     NO  
+  RSA-2048       Classical        34.294ms    0.071ms  0.470ms     294B    256B     NO  
+  ECDH P-256     Classical         0.033ms    0.089ms      N/A      91B     65B     NO  
   Kyber-512      PQC               0.022ms    0.027ms  0.025ms     800B    768B    YES *
   Kyber-768      PQC               0.037ms    0.045ms  0.041ms    1184B   1088B    YES *
   Kyber-1024     PQC               0.053ms    0.064ms  0.058ms    1568B   1568B    YES *
@@ -16,8 +16,8 @@
 
   KEY FINDINGS
   ------------
-  Kyber-512 key generation : 0.022ms vs RSA-2048: 239.662ms (10894x faster)
-  Kyber-512 encapsulation  : 0.027ms vs RSA-2048: 0.214ms (8x faster)
+  Kyber-512 key generation : 0.022ms vs RSA-2048: 34.294ms (1559x faster)
+  Kyber-512 encapsulation  : 0.027ms vs RSA-2048: 0.071ms (3x faster)
   Kyber-512 public key     : 800B vs RSA-2048: 294B
   All Kyber variants resist Shor's algorithm. RSA and ECDH do not.
 
@@ -32,7 +32,7 @@
   -------------
   Table III compares RSA-2048 and ECDH P-256 (measured, 100 iterations)
   against CRYSTALS-Kyber (NIST PQC reference). Kyber-512 key
-  generation is 10894x faster than RSA-2048 while providing
+  generation is 1559x faster than RSA-2048 while providing
   quantum resistance. Public keys are larger (800B vs 294B)
   — an acceptable tradeoff for post-quantum HTTP security.
 

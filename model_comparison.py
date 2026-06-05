@@ -22,7 +22,7 @@ import httpx
 
 OLLAMA_URL = "http://localhost:11434/api/chat"
 
-MODELS = ["mistral", "phi3", "llama3"]
+MODELS = ["mistral", "phi3", "phi3:medium", "llama3"]
 
 SYSTEM_PROMPT = """You are a security analyst for an HTTP middleware system.
 Analyze the incoming request and return a JSON object with exactly this shape:
@@ -287,3 +287,4 @@ async def run_comparison():
 
 if __name__ == "__main__":
     asyncio.run(run_comparison())
+

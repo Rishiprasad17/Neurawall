@@ -1,0 +1,42 @@
+
+====================================================================
+  LARGE-SCALE BLIND BENCHMARK RESULTS
+  280 attack payloads + 50 clean requests
+  Sources: PayloadsAllTheThings, SecLists, OWASP, PortSwigger
+====================================================================
+
+  DETECTION PERFORMANCE
+  ---------------------
+  Attacks tested    : 280
+  Attacks detected  : 262
+  Attacks missed    : 18
+  Detection rate    : 93.6%
+
+  FALSE POSITIVE RATE
+  -------------------
+  Clean tested      : 50
+  False positives   : 1
+  FP rate           : 2.0%
+
+  LATENCY
+  -------
+  Average           : 53.7ms
+  P95               : 217.5ms
+
+  DETECTION BY CATEGORY
+  ---------------------
+  Command Injection            70/74     (94.6%)
+  Path Traversal               40/42     (95.2%)
+  SQL Injection                69/77     (89.6%)
+  XSS                          48/48     (100.0%)
+  Prompt Injection             35/39     (89.7%)
+
+  PAPER SUMMARY
+  -------------
+  In a large-scale blind test using 280 attack payloads
+  from PayloadsAllTheThings, SecLists, OWASP Testing Guide,
+  and PortSwigger — none used during development — Neurawall
+  achieved 93.6% detection with 2.0% false positives
+  on 50 clean requests. Average latency: 53.7ms.
+
+====================================================================

@@ -5,25 +5,26 @@
 
   Metric                         Mistral 7B        Phi-3    Llama3 8B
   ------------------------------------------------------------
-  Detection Rate (%)                   85.7% *         85.7% *         71.4%  
-  False Positive Rate (%)              33.3%            0.0% *          0.0% *
-  Avg Inference (ms)                8839.1ms        6796.8ms *      9392.3ms  
-  Avg Attack Score                     0.712           0.837 *         0.611  
-  Score Std Deviation                  0.218 *          0.31           0.374  
+  Detection Rate (%)                   85.7%           85.7%          100.0% *         78.6%  
+  False Positive Rate (%)              33.3%            0.0% *          0.0% *          0.0% *
+  Avg Inference (ms)                6687.5ms        6132.2ms *     14879.2ms        7139.9ms  
+  Avg Attack Score                     0.714           0.864 *         0.829            0.66  
+  Score Std Deviation                  0.249           0.301           0.085 *         0.371  
 
   * = best value for that metric
 
   WINNER SUMMARY
   --------------
-  Best detection rate  : mistral (85.7%)
+  Best detection rate  : phi3:medium (100.0%)
   Lowest false positives: phi3 (0.0%)
-  Fastest inference    : phi3 (6796.8ms)
-  Most consistent      : mistral (std=0.218)
+  Fastest inference    : phi3 (6132.2ms)
+  Most consistent      : phi3:medium (std=0.085)
 
   RECOMMENDATION FOR neurawall DEFAULT
   -------------------------------------
-  phi3            weighted score: 0.97 <-- recommended
-  llama3          weighted score: 0.836
-  mistral         weighted score: 0.654
+  phi3:medium     weighted score: 0.882 <-- recommended
+  phi3            weighted score: 0.871
+  llama3          weighted score: 0.809
+  mistral         weighted score: 0.561
 
 ================================================================
