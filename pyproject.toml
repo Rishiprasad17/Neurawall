@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "neurawall"
-version = "0.2.0"
+version = "0.3.0"
 description = "AI-powered HTTP security middleware for FastAPI — 100% OWASP detection, quantum-ready"
 readme = "README.md"
 license = "MIT"
