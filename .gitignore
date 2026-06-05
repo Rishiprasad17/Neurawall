@@ -1,0 +1,10 @@
+neurawall_phi3_merged/
+neurawall_phi3/
+neurawall_phi3_gguf/
+*.safetensors
+*.bin
+payload_cache/
+training_data/
+__pycache__/
+*.egg-info/
+dist/
