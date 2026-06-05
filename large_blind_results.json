@@ -3,7 +3,7 @@
   "fp_rate": 2.0,
   "total_attacks": 280,
   "total_clean": 50,
-  "avg_latency_ms": 74.9,
+  "avg_latency_ms": 157.99,
   "detected": 262,
   "missed": 18,
   "false_positives": 1,

@@ -1,0 +1,5 @@
+FROM neurawall-phi3:latest
+PARAMETER num_ctx 2048
+PARAMETER num_predict 200
+PARAMETER temperature 0.1
+SYSTEM "You are an expert HTTP security analyst. Analyze HTTP request payloads and return ONLY a JSON object with anomaly_score (0.0-1.0), attack_type, confidence, and reason. Score 0.0=clean, 1.0=definite attack."

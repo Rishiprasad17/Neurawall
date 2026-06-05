@@ -20,8 +20,8 @@
 
   LATENCY
   -------
-  Average           : 74.9ms
-  P95               : 347.6ms
+  Average           : 158.0ms
+  P95               : 428.0ms
 
   DETECTION BY CATEGORY
   ---------------------
@@ -37,6 +37,6 @@
   from PayloadsAllTheThings, SecLists, OWASP Testing Guide,
   and PortSwigger — none used during development — Neurawall
   achieved 93.6% detection with 2.0% false positives
-  on 50 clean requests. Average latency: 74.9ms.
+  on 50 clean requests. Average latency: 158.0ms.
 
 ====================================================================

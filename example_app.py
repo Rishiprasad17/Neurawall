@@ -16,6 +16,7 @@ from fastapi.responses import JSONResponse
 from guardrail import NeurawallMiddleware as GuardrailMiddleware, NeurawallConfig as GuardrailConfig
 from guardrail.dashboard import add_dashboard
 
+
 logging.basicConfig(level=logging.INFO, format="%(levelname)s | %(name)s | %(message)s")
 
 config = GuardrailConfig(
@@ -26,7 +27,7 @@ config = GuardrailConfig(
     # Phase 2 — AI (local Ollama)
     ai_enabled=True,
     ai_backend="ollama",
-    ollama_model="neurawall-phi3",
+    ollama_model="neurawall-phi3-fast",
     anomaly_threshold=0.75,
 
     # Phase 3 — Security

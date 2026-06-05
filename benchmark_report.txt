@@ -19,8 +19,8 @@
 
   LATENCY (ms)
   ------------
-  Average latency         : 105.9ms
-  P95 latency             : 388.8ms
+  Average latency         : 1396.5ms
+  P95 latency             : 446.9ms
   Rule block latency      : <5ms (instant)
 
   DETECTION BY CATEGORY
@@ -37,6 +37,6 @@
   across 5 attack categories with a false positive rate
   of 0.0% on legitimate traffic. Rule-based detection
   operates at <5ms latency. AI background scoring adds zero
-  latency to responses (async). Average response time: 105.9ms.
+  latency to responses (async). Average response time: 1396.5ms.
 
 ============================================================

@@ -206,6 +206,11 @@ CMD_PATTERNS = [
     # Specific dangerous commands
     r"rm\s+-rf",
     r"--no-preserve-root",
+    r"__class__\.__",
+    r"__globals__",
+    r"__init__\.__",
+    r"__import__\s*\(",
+    r"popen\s*\(",
     r"cmd\.exe\s*/c",
     r"powershell\.exe",
     r"/bin/(bash|sh|zsh)\b",
@@ -218,6 +223,12 @@ CMD_PATTERNS = [
     r"curl\s+http.*\|\s*(bash|sh)",
     r"wget\s+http.*&&",
     r"wget\s+-O\s+.*&&",
+    r"__class__\.__",
+    r"__globals__",
+    r"__init__\.__",
+    r"__import__\s*\(",
+    r"popen\s*\(",
+    r"\{%.*?(exec|import|system|popen).*?%\}",
 ]
 
 ALL_PATTERN_GROUPS = {
@@ -310,3 +321,4 @@ class SecurityHardener:
 
     def _verify_jwt(self, token: str) -> bool:
         return len(token) > 10
+
